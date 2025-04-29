@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ring Try-on App</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Ring Try-on App</h1>
+
+  <section id="demos" class="invisible">
+    <div class="content-wrapper">
+      <!-- Camera Feed Section -->
+      <div id="liveView" class="videoView">
+        <div class="video-container">
+          <video id="webcam" autoplay playsinline></video>
+          <div id="logo-container">
+            <img id="watermark-logo" src="ring_tryon_logo.png" alt="Logo">
+          </div>
+        </div>
+        <div class="control-container">
+          <div class="button-container">
+            <button id="webcamButton" class="mdc-button mdc-button--raised">
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">ENABLE WEBCAM</span>
+            </button>
+            <button id="switchCameraButton" class="mdc-button mdc-button--raised">
+              <span class="mdc-button__label">SWITCH CAMERA</span>
+            </button>
+            <button id="captureButton" class="mdc-button mdc-button--raised">
+              <span class="mdc-button__label">CAPTURE PHOTO</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Captured Image Section -->
+      <div id="capturedView" class="captured-view">
+        <canvas id="capturedCanvas" class="captured-canvas"></canvas>
+        <div class="checkbox-container">
+          <input type="checkbox" id="skeletonCheckbox" checked>
+          <label for="skeletonCheckbox">Show Detection</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Women's Rings Section -->
+    <div class="ring-gallery">
+      <div class="ring-header">
+        <h3>Women's Ring Style</h3>
+        <button class="view-button-women mdc-button mdc-button--raised">View Options</button>
+      </div>
+      <div class="ring-options-container-women">
+        <div class="ring-options">
+          <div class="ring-option" data-ring="rings/womens/flower.png">
+            <img src="rings/womens/flower.png" alt="Flower Ring">
+            <span>Flower Ring</span>
+          </div>
+          <div class="ring-option" data-ring="rings/womens/green_stone.png">
+            <img src="rings/womens/green_stone.png" alt="Greenstone Ring">
+            <span>Greenstone Ring</span>
+          </div>
+          <div class="ring-option" data-ring="rings/womens/ruby.png">
+            <img src="rings/womens/ruby.png" alt="Ruby Ring">
+            <span>Ruby Ring</span>
+          </div>
+          <div class="ring-option" data-ring="rings/womens/diamond.png">
+            <img src="rings/womens/diamond.png" alt="Diamond Ring">
+            <span>Diamond Ring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Men's Rings Section -->
+    <div class="ring-gallery">
+      <div class="ring-header">
+        <h3>Men's Ring Style</h3>
+        <button class="view-button-men mdc-button mdc-button--raised">View Options</button>
+      </div>
+      <div class="ring-options-container-men">
+        <div class="ring-options">
+          <div class="ring-option" data-ring="rings/mens/ring.png">
+            <img src="rings/mens/ring.png" alt="Classic Ring">
+            <span>Classic Ring</span>
+          </div>
+          <div class="ring-option" data-ring="rings/mens/red_band.png">
+            <img src="rings/mens/red_band.png" alt="Red Ring">
+            <span>Red Ring</span>
+          </div>
+          <div class="ring-option" data-ring="rings/mens/gold_ring.png">
+            <img src="rings/mens/gold_ring.png" alt="Gold Ring">
+            <span>Gold Ring</span>
+          </div>
+          <div class="ring-option" data-ring="rings/mens/copper_ring.png">
+            <img src="rings/mens/copper_ring.png" alt="Copper Ring">
+            <span>Copper Ring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+@use "material-components-web";
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 1rem;
+  color: #ffffff;
+  background-color: #33436f;
+  --mdc-theme-primary: #60a5fa;
+  --mdc-theme-on-primary: #1e3a8a;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #dbeafe;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+video {
+  clear: both;
+  display: block;
+  transform: rotateY(180deg);
+  border: 2px solid #1e40af;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+
+section {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.invisible {
+  opacity: 0.2;
+}
+
+.videoView {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.captured-view {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem 0;
+}
+
+.captured-canvas {
+  width: 100%;
+  height: auto;
+  border: 2px solid #1e40af;
+  border-radius: 5px;
+  display: none;
+}
+
+.ring-gallery {
+  margin: 0 auto 20px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.ring-gallery h3 {
+  margin-top: 0;
+  margin-bottom: 17px;
+  color: #1e40af;
+  font-size: 18px;
+  text-align: center;
+  align-items: center;
+}
+
+.ring-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.ring-option {
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ring-option:hover {
+  background-color: #93c5fd;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ring-option.selected {
+  background-color: #2563eb;
+  color: #000000;
+  border: 2px solid #dbeafe;
+  box-shadow: 0 0 10px rgba(219, 234, 254, 0.7);
+}
+
+.ring-option img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: white;
+}
+
+.ring-option span {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #000000;
+}
+
+.ring-options-container-men,
+.ring-options-container-women {
+  display: none;
+  margin-top: 20px;
+}
+
+.ring-header {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#skeletonCheckbox {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+label[for="skeletonCheckbox"] {
+  color: #dbeafe;
+}
+
+#logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+#watermark-logo {
+  max-width: 120px;
+  height: auto;
+  opacity: 1;
+  filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.7));
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .videoView, .captured-view {
+    width: 50%;
+    max-width: 600px;
+  }
+
+  .ring-gallery {
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .ring-gallery {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 1rem auto;
+  }
+
+  .ring-options {
+    justify-content: center;
+  }
+
+  .ring-option {
+    width: 80px;
+  }
+
+  .ring-option img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .ring-option span {
+    font-size: 0.8rem;
+    color: #000000;
+  }
+
+  .ring-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .ring-header button {
+    width: 100%;
+  }
+
+  #watermark-logo {
+    max-width: 70px;
+  }
+
+  .mdc-button {
+    padding: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  .captured-view {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .ring-option {
+    width: 70px;
+  }
+
+  .ring-option img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #watermark-logo {
+    max-width: 50px;
+  }
+}
+
+@media (pointer: coarse) {
+  .ring-option {
+    padding: 12px;
+  }
+
+  #skeletonCheckbox {
+    transform: scale(1.4);
+  }
+
+  .mdc-button {
+    min-height: 58px;
+  }
+}
