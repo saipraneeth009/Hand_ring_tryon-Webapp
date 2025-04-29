@@ -1,6 +1,6 @@
 # Hand Ring POC
 
-This is the **Proof of Concept (POC)** for a ring try-on web interface using **JavaScript**. The project allows users to virtually try rings, providing a better understanding of how they would look in real life.
+This is the Project for a ring try-on web interface using **JavaScript**. The project allows users to virtually try rings, providing a better understanding of how they would look in real life.
 
 ## 📥 Download the Project
 
