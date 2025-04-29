@@ -7,7 +7,7 @@ This is the Project for a ring try-on web interface using **JavaScript**. The pr
 To clone this project, use the following command:
 
 ```sh
-git clone https://github.com/saipraneeth77/Hand_ring_POC.git
+git clone https://github.com/saipraneeth009/Hand_ring_tryon-Webapp.git
 ```
 
 ## 🚀 Running the Project
@@ -15,7 +15,7 @@ git clone https://github.com/saipraneeth77/Hand_ring_POC.git
 1. **Open Terminal** and navigate to the project directory:
 
    ```sh
-   cd Hand_ring_POC
+   cd Hand_ring_tryon-Webapp
    ```
 
 2. **Start a local server** using Python:
